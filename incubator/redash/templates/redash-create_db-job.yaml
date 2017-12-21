@@ -1,0 +1,29 @@
+{{- if .Values.redash.create_db.enabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ template "redash.fullname" . }}-create-db
+  labels:
+    app: {{ template "redash.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}    
+spec:
+  template:
+    metadata:
+      labels:
+        app: {{ template "redash.name" . }}
+        release: {{ .Release.Name }}
+        component: create-db
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args: ['create_db']
+          env:
+          {{- range $key, $value := .Values.redash.create_db.deployment.environment }}
+            - name: {{ $key }}
+              value: "{{ $value }}"
+          {{- end }}              
+{{- end }}

@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "redash.fullname" . }}-server
+  labels:
+    app: {{ template "redash.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}    
+spec:
+  replicas: {{ .Values.redash.server.deployment.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "redash.name" . }}
+        release: {{ .Release.Name }}
+        component: server
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args: ['server']
+          ports:
+            - containerPort: {{ .Values.redash.server.service.containerPort }}
+          env:
+          {{- range $key, $value := .Values.redash.server.deployment.environment }}
+            - name: {{ $key }}
+              value: "{{ $value }}"
+          {{- end }}              
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+    {{- end }}

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "redash.fullname" . }}
+  labels:
+    app: {{ template "redash.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.redash.server.service.type }}
+  ports:
+    - port: {{ .Values.redash.server.service.externalPort }}
+      targetPort: {{ .Values.redash.server.service.containerPort }}
+      protocol: TCP
+      name: {{ .Values.redash.server.service.name }}
+  selector:
+    app: {{ template "redash.name" . }}
+    release: {{ .Release.Name }}
+    component: server
