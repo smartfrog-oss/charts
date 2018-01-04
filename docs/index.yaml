@@ -2,11 +2,19 @@ apiVersion: v1
 entries:
   redash:
   - apiVersion: v1
-    created: 2018-01-04T17:56:13.984607965+01:00
+    created: 2018-01-04T18:18:31.839293244+01:00
+    description: A Helm chart for Kubernetes
+    digest: 432f7c2689e0fe03ff2677da7d7cd28b52ad28ba8fc98eed065a026eb29618c7
+    name: redash
+    urls:
+    - incubator/redash-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    created: 2018-01-04T18:18:31.8383285+01:00
     description: A Helm chart for Kubernetes
     digest: b4517255020919cfae1823989de2bbab61bbdccc16506f6663cfc55cee4bd80e
     name: redash
     urls:
-    - https://smartfrog-oss.github.io/charts/redash-0.1.0.tgz
+    - incubator/redash-0.1.0.tgz
     version: 0.1.0
-generated: 2018-01-04T17:56:13.982972733+01:00
+generated: 2018-01-04T18:18:31.83729049+01:00
