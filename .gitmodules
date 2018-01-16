@@ -1,3 +1,7 @@
 [submodule ".submodules/vault-ui"]
 	path = .submodules/vault-ui
 	url = git@github.com:djenriquez/vault-ui.git
+[submodule ".submodules/gocd-helm-chart"]
+	path = .submodules/gocd-helm-chart
+	url = git@github.com:gocd/gocd-helm-chart.git
+        branch = acd54268d899e37baa2ac590df1430c6072e9ce0

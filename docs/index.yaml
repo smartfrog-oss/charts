@@ -1,8 +1,25 @@
 apiVersion: v1
 entries:
+  gocd:
+  - appVersion: 17.10.0
+    created: 2018-01-16T10:24:40.54940206+01:00
+    description: A GoCD Helm chart for Kubernetes. GoCD is an Open source continuous
+      delivery server to model and visualize complex workflows with ease.
+    digest: 9c70fc9ccf2cb60d7825fa058c86f655e417cddc9bde1a5b8b991a6bdd5879b3
+    home: https://gocd.org/
+    icon: https://cdn.rawgit.com/gocd/gocd-chocolatey/43ae0ef2/go-logo-192px.svg
+    maintainers:
+    - email: godev+k8s@thoughtworks.com
+      name: Thoughtworks
+    name: gocd
+    sources:
+    - https://github.com/gocd/gocd
+    urls:
+    - charts/gocd-0.1.0.tgz
+    version: 0.1.0
   redash:
   - apiVersion: v1
-    created: 2018-01-05T13:16:50.340753445+01:00
+    created: 2018-01-16T10:24:40.549860178+01:00
     description: A Helm chart for Kubernetes
     digest: 90dab6621041e1c2d5258c93ad7f44bef8ab983dc4e5075743f07f3b51e61550
     name: redash
@@ -11,11 +28,11 @@ entries:
     version: 0.1.1
   vault-ui:
   - apiVersion: v1
-    created: 2018-01-05T13:16:50.341304725+01:00
+    created: 2018-01-16T10:24:40.55021942+01:00
     description: A Helm chart for Vault-ui
     digest: 71587438d8ba1150988e3ecdc8bcd7d610defba8aa911d0ee30beee8a4f753b6
     name: vault-ui
     urls:
     - charts/vault-ui-0.1.0.tgz
     version: 0.1.0
-generated: 2018-01-05T13:16:50.338709811+01:00
+generated: 2018-01-16T10:24:40.548192788+01:00

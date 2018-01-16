@@ -10,7 +10,9 @@ This is a collection of charts for OSS software
 
 - [vault-ui](https://github.com/smartfrog-oss/charts/tree/master/external/vault-ui)
   https://github.com/djenriquez/vault-ui
-
+- [gocd](https://github.com/smartfrog-oss/charts/tree/master/external/gocd)
+  https://github.com/gocd/gocd-helm-chart/tree/acd54268d899e37baa2ac590df1430c6072e9ce0
+  
 # Using the repsitory directly
 
 `helm repo add smartfrog https://smartfrog-oss.github.io/charts/`
